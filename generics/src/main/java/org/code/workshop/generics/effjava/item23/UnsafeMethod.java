@@ -6,7 +6,7 @@ import java.util.List;
 public class UnsafeMethod {
 	public static void main (String[] args) {
 		List<String> strList = new ArrayList<>();
-		unsafeAdd(strList, new Integer(10));
+		//unsafeAdd(strList, new Integer(10));
 		System.out.println(strList.get(0));
 		System.out.println("unreachable code");
 	}
