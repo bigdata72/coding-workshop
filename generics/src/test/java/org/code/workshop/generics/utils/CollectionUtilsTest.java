@@ -3,7 +3,6 @@ package org.code.workshop.generics.utils;
 
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -31,13 +30,13 @@ class CollectionUtilsTest {
 		numbers.add(null);
 		numbers.add(null);
 		numbers.add(3L);
-		assertThat(CollectionUtils.max(numbers)).isEqualTo(3L);
+		assertThat(CollectionUtils.max_w_itr(numbers)).isEqualTo(3L);
 	}
 	
 	@Test
 	void max_only_nulls () {
 		List<Long> numbers = new ArrayList<>();
 		numbers.add(null);
-		assertThat(CollectionUtils.max(numbers)).isNull();
+		assertThat(CollectionUtils.max_w_itr(numbers)).isNull();
 	}
 }

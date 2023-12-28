@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class CollectionUtils {
 	/* generic method to determine the max element */
-	public static <T extends Comparable<T>> T max(Collection<T> cs){
+	public static <T extends Comparable<T>> T max_w_itr (Collection<T> cs){
 		T max = null;
 		if(!cs.isEmpty()){
 			Iterator<T> iter = cs.iterator();
@@ -23,5 +23,17 @@ public class CollectionUtils {
 			}
 		}
 		return max;
+	}
+	
+	// not safe for null elements in collection
+	public static <T extends Comparable<T>> T max (Collection<T> cs) {
+		Iterator <T> itr = cs.iterator();
+		T m = itr.next();
+		assert m != null;
+		while (itr.hasNext()){
+			T e = itr.next();
+			if (m.compareTo(e) <0 ) m = e;
+		}
+		return m;
 	}
 }
