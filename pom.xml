@@ -11,6 +11,8 @@
 
     <modules>
         <module>generics</module>
+        <module>designpatterns</module>
+        <module>algo</module>
     </modules>
 
     <properties>
